@@ -1,0 +1,144 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    --hitblue: rgb(0, 153, 255);
+}
+#overall {
+    height: 100%;
+    background-color: rgb(152, 224, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#header {
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}
+
+p#ocean {
+    font-size: 36px;
+    opacity: 0;
+    transition: opacity 3s ease-out 0.7s; 
+}
+
+
+#playergrid {
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 3px;
+}
+
+#cpugrid {
+    width: 600px;
+    height: 600px;
+    display: none;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 3px;
+    transition-delay: 3s;
+    opacity: 0;
+    grid-column: 3 / 4;
+    transition: opacity 3s ease-out 0.7s; 
+}
+
+#gridcontainer {
+    display: flex;
+    justify-content:left;
+    width: 600px;
+    transition: width 0.7s ease-out 0.2s;
+}
+
+#gridcontainercolumned {
+    display: grid;
+    grid-template-columns: 600px 100px 600px;
+    justify-items: center;
+}
+
+#mainmsg {
+    grid-column: 1 / 2;
+}
+
+#playermsg {
+    grid-column: 3 / 4;
+    opacity: 0;
+    transition: opacity 3s ease-out 0.7s; 
+    left: 50%
+}
+
+
+.humansquare {
+    border: 2px solid black;
+}
+
+.noship {
+    background-color: blue;
+}
+
+.humansquare.yesship {
+    background-color: gray;
+}
+
+.humansquare.noship {
+    
+}
+
+.cpusquare {
+    border: 2px solid black; 
+    cursor: pointer;
+    background-color: blue;
+}
+
+
+.cpusquare:hover {
+    background-color: var(--hitblue)
+}
+
+.cpusquare.hit:hover, .cpusquare.miss:hover {
+    cursor: not-allowed;
+}
+
+.hit {
+    color: red;
+    background-color: var(--hitblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.miss {
+    background-color: var(--hitblue);
+    transition: background-color 0.4s ease-in;
+}
+
+.active {
+    background-color: rgb(86, 214, 210);
+    cursor: pointer;
+}
+
+#orientbtn {
+    width: 120px;
+    margin-bottom: 6px;
+
+}
+
+h1 {
+    font-weight: 500;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
